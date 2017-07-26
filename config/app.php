@@ -167,6 +167,7 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
+        AdamWathan\EloquentOAuthL5\EloquentOAuthServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -225,6 +226,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'SocialAuth' => AdamWathan\EloquentOAuth\Facades\OAuth::class,
 
     ],
 
