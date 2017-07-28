@@ -7,9 +7,9 @@ return [
     'table' => 'oauth_identities',
     'providers' => [
         'facebook' => [
-            'client_id' => '12345678',
-            'client_secret' => 'y0ur53cr374ppk3y',
-            'redirect_uri' => 'https://example.com/your/facebook/redirect',
+            'client_id' => '1210592809041014',
+            'client_secret' => '64d6003644fe3b205483f85e86e2d94d',
+            'redirect_uri' => 'http://laraforum.dev/facebook/redirect',
             'scope' => [],
         ],
         'google' => [
@@ -19,8 +19,8 @@ return [
             'scope' => [],
         ],
         'github' => [
-            'client_id' => '15d0aa2c5a485829db97',
-            'client_secret' => '372a0d6437c8706b52915397b728f55b2bedfa2c',
+            'client_id' => 'f27961b1904dc89831a8',
+            'client_secret' => '7a613ad95a0d1cd661f8745f7d787fa514babe05',
             'redirect_uri' => 'http://laraforum.dev/github/redirect',
             'scope' => [],
         ],
