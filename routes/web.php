@@ -19,3 +19,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('{provider}/auth',[
+
+       'uses'=>'SocialsController@auth',
+       'as'=>'social.auth'
+
+	]);
+

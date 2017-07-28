@@ -19,9 +19,9 @@ return [
             'scope' => [],
         ],
         'github' => [
-            'client_id' => '12345678',
-            'client_secret' => 'y0ur53cr374ppk3y',
-            'redirect_uri' => 'https://example.com/your/github/redirect',
+            'client_id' => '15d0aa2c5a485829db97',
+            'client_secret' => '372a0d6437c8706b52915397b728f55b2bedfa2c',
+            'redirect_uri' => 'http://laraforum.dev/github/redirect',
             'scope' => [],
         ],
         'linkedin' => [
