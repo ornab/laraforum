@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateChannelRequest;
 use App\Channel;
+use Session;
 
 class ChannelsController extends Controller
 {
@@ -33,9 +35,16 @@ class ChannelsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateChannelRequest $request)
     {
-        //
+        Channel::create([
+
+                'title' => $request->channel
+            ]);
+
+        Session::flash('success', 'Channel Created');
+
+        return redirect()->route('channels.index');
     }
 
     /**
@@ -57,7 +66,7 @@ class ChannelsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('channels.edit')->with('channel', Channel::findOrFail($id));
     }
 
     /**
@@ -69,7 +78,15 @@ class ChannelsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $channel = Channel::findOrFail($id);
+
+        $channel->title = $request->channel;
+
+        $channel->save();
+
+        Session::flash('success', 'Channel Updated Successfully');
+
+        return redirect()->route('channels.index');
     }
 
     /**
@@ -80,6 +97,10 @@ class ChannelsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Channel::findOrFail($id)->delete();
+
+        Session::flash('success', 'Deleted');
+
+        return redirect()->route('channels.index');
     }
 }

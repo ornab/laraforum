@@ -25,14 +25,27 @@
 
 									    <tr>
 									    	
-											<td>{{ $channel->name }}</td>
+											<td>{{ $channel->title }}</td>
 											
 											<td> 
-											<a href="{{route('channels.edit', ['channel'=>$channel->id])}}" class="btn btn-xs btn-primary">EDIT</a>
+											<a href="{{route('channels.edit', ['channel'=>$channel->id])}}" class="btn btn-xs btn-info">Edit</a>
 											</td>
 											
 											<td>
-											<a href="{{route('channels.destroy', ['channel'=>$channel->id])}}" class="btn btn-xs btn-danger">DELETE</a>
+											<form action="{{route('channels.destroy', ['channel'=> $channel->id])}}" method="post">
+
+											{{ csrf_field() }}
+
+                            			    {{ method_field('DELETE')}}
+
+											<div class="form-group">
+												
+													<button class="btn btn-xs btn-danger" type="submit"> Delete </button>
+
+											</div>
+
+											</form>
+											
 											</td>
 
 									    </tr>
